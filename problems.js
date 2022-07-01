@@ -1,4 +1,4 @@
-/* 
+/*
     Original:
     Write a function `plusFive` that takes in a number as an argument and
     returns the sum of that number and 5.
@@ -7,27 +7,29 @@
     Write a function `plusTen` that takes in a number as an argument and
     returns the sum of that number and 10.
 */
-function plusFive(num) {
-    return num + 5;
+function plusTen(num) {
+    return num + 10;
 }
 
 
 /*
     Original:
-    Write a function `printFives(max)` that prints out the multiples of 5 that 
+    Write a function `printFives(max)` that prints out the multiples of 5 that
     are less than max.
 
     New:
     Write a function `returnSevens(max)` that returns an array that contains
     multiples of 7 that are less than max.
 */
-function printFives(max) {
+function returnSevens(max) {
+    let arr = []
     for (let i = 0; i < max; i++) {
-        if (i % 5 === 0) {
-            console.log(i);
+        if (i % 7 === 0) {
+            arr.push(i)
         }
-    }
-}
+    }   return arr
+
+};
 
 
 /*
@@ -35,7 +37,7 @@ function printFives(max) {
     Write a function named `eitherStringIncluded(sentence, word1, word2)` that
     accepts a sentence and two words as arguments. The `eitherStringIncluded`
     function should return `true` if *either* `word1` or `word2` is found in
-    the sentence, and `false` if neither is found. 
+    the sentence, and `false` if neither is found.
 
     New:
     Write a function named `bothStringsIncluded(sentence, word1, word2)` that
@@ -47,6 +49,13 @@ function eitherStringIncluded(sentence, word1, word2) {
     return sentence.includes(word1) || sentence.includes(word2);
 }
 
+function bothStringsIncluded(sentence, word1, word2) {
+    let newsent = sentence.toLowerCase()
+    let newword1 = word1.toLowerCase()
+    let newword2 = word2.toLowerCase()
+
+    return newsent.includes(newword1) && newsent.includes(newword2)
+};
 
 /*
     Original:
@@ -115,7 +124,7 @@ function countVowels(word) {
     string.
 
     Strings are immutable, so here are some tools you may find useful. The
-    `.split('')` function on strings to make a copy of the string as an array. 
+    `.split('')` function on strings to make a copy of the string as an array.
     The `.join('')` function joins the elements in an array into a string.
 */
 function whisper(str) {
@@ -130,5 +139,5 @@ module.exports = {
     productArray,
     fiveAndEleven,
     countConsonants,
-    alternatingLetters   
+    alternatingLetters
 }
